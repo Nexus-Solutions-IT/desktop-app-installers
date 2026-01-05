@@ -1,22 +1,27 @@
 # Desktop App Installers
 
-This repository contains a PowerShell script for automating the installation of essential Windows applications using **WinGet**.
+This repository contains an improved PowerShell script for automating the installation of essential Windows applications using **WinGet**.
 
 ## 🚀 Applications Installed
 
 The script `winstall-4606.ps1` installs the following software:
 
-- **Mozilla Firefox**: Web browser.
-- **Google Chrome**: Web browser.
-- **Visual Studio Code**: Code editor.
-- **1Password**: Password manager.
-- **ONLYOFFICE Desktop Editors**: Office suite.
-- **Google Antigravity**: Specialized utility.
+- **Mozilla Firefox**: Fast and private web browser.
+- **Google Chrome**: Popular web browser by Google.
+- **Visual Studio Code**: Powerful, extensible code editor.
+- **1Password**: Secure password manager.
+- **ONLYOFFICE Desktop Editors**: Comprehensive office suite.
+
+## 🛠️ Features
+
+- **WinGet Check**: Automatically detects if the Windows Package Manager is installed.
+- **Robust Error Handling**: Captures specific exit codes to identify successes, failures, and reboot requirements.
+- **Silent Installation**: Runs without user prompts for a faster setup.
 
 ## 🛠️ Requirements
 
 - **Windows 10 or 11**
-- **WinGet** (Windows Package Manager) must be installed and available in your PowerShell environment.
+- **WinGet** (The script will help you install it if it's missing).
 
 ## 📖 How to Use
 
@@ -27,5 +32,5 @@ The script `winstall-4606.ps1` installs the following software:
     .\winstall-4606.ps1
     ```
 
-> [!NOTE]
-> The script uses the `--silent` and `--accept-package-agreements` flags to ensure a smooth, unattended installation process.
+> [!TIP]
+> Always run PowerShell as Administrator to ensure the scripts can write to program folders and manage system-level software.
