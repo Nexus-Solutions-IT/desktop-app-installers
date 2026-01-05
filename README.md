@@ -1,36 +1,46 @@
 # Desktop App Installers
 
-This repository contains an improved PowerShell script for automating the installation of essential Windows applications using **WinGet**.
+A professional PowerShell script for automated, unattended installation of essential Windows applications. This script uses a **Hybrid Approach**, prioritizing **WinGet** and falling back to **Chocolatey** if the primary installation fails.
 
-## 🚀 Applications Installed
+## 🚀 One-Liner Installation
 
-The script `winstall-4606.ps1` installs the following software:
+Run the following command in an **Administrator PowerShell** window to download and execute the script immediately:
 
-- **Mozilla Firefox**: Fast and private web browser.
-- **Google Chrome**: Popular web browser by Google.
-- **Visual Studio Code**: Powerful, extensible code editor.
-- **1Password**: Secure password manager.
-- **ONLYOFFICE Desktop Editors**: Comprehensive office suite.
+```powershell
+powershell -ep Bypass -c "irm https://raw.githubusercontent.com/Nexus-Solutions-IT/desktop-app-installers/refs/heads/main/winstall-4606.ps1 | iex"
+```
 
 ## 🛠️ Features
 
-- **WinGet Check**: Automatically detects if the Windows Package Manager is installed.
-- **Robust Error Handling**: Captures specific exit codes to identify successes, failures, and reboot requirements.
-- **Silent Installation**: Runs without user prompts for a faster setup.
+- **Hybrid Installation**: Primary method is WinGet. If it fails, the script automatically installs Chocolatey (if missing) and tries again.
+- **Fail-Safe Mechanism**: Automatically handles the path refresh required after installing Chocolatey.
+- **Error Perception**: Specifically detects and reports if a system reboot is required for specific apps.
+- **Completely Silent**: All agreements are accepted automatically for a true "set and forget" experience.
 
-## 🛠️ Requirements
+## 📦 Included Applications
 
-- **Windows 10 or 11**
-- **WinGet** (The script will help you install it if it's missing).
+| Application | WinGet ID | Chocolatey ID |
+| :--- | :--- | :--- |
+| **Mozilla Firefox** | `Mozilla.Firefox` | `firefox` |
+| **Google Chrome** | `Google.Chrome` | `googlechrome` |
+| **VS Code** | `Microsoft.VisualStudioCode` | `vscode` |
+| **1Password** | `AgileBits.1Password` | `1password` |
+| **OnlyOffice** | `ONLYOFFICE.DesktopEditors` | `onlyoffice` |
 
-## 📖 How to Use
+## 📖 Manual Usage
 
 1.  Open **PowerShell** as an **Administrator**.
 2.  Navigate to the directory containing the script.
-3.  Run the script using the following command:
+3.  Execute the script:
     ```powershell
     .\winstall-4606.ps1
     ```
 
-> [!TIP]
-> Always run PowerShell as Administrator to ensure the scripts can write to program folders and manage system-level software.
+## 🛠️ Requirements
+
+- **Windows 10 or 11**
+- Internet connection.
+- Administrator privileges.
+
+---
+*Maintained by [Nexus Solutions IT](https://github.com/Nexus-Solutions-IT)*
